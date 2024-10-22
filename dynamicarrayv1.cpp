@@ -40,6 +40,7 @@ private:
 		    return this->count;
 		}
 		~DynamicArray(){
+		    delete [] items;
 		    cout<<"Dynamice Array destructed"<<endl;
 		}
 	
