@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 class IICEngine{
 	public:
 			//pure virtual method;
@@ -17,12 +19,16 @@ class VericoreEngine:public IICEngine{
 class TataCar{
 	IICEngine* _engine;
 	public:
-		TataCar(IICEngine* engine): _engine{engine}{}
+		TataCar(IICEngine* engine): _engine{engine}{
+		    	cout<<"car constructed"<<endl;
+		}
 		void start(){
 			_engine->crank();
+			cout<<"engine started"<<endl;
 		}	
 		void stop(){
 			_engine->halt();
+				cout<<"engine halted"<<endl;
 		}
 
 };
