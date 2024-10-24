@@ -11,24 +11,20 @@ class IICEngine{
 //VericoreEngine implemets contract i.e IICEngine
 class VericoreEngine:public IICEngine{
 	public:
-		void crank(){}
-		void halt(){}
+		void crank(){cout<<"vericore engine cranked"<<endl;}
+		void halt(){cout<<"vericore engine halted"<<endl;}
 
 };
 //High Level Module , consumer,client
 class TataCar{
 	IICEngine* _engine;
 	public:
-		TataCar(IICEngine* engine): _engine{engine}{
-		    	cout<<"car constructed"<<endl;
-		}
+		TataCar(IICEngine* engine): _engine{engine}{}
 		void start(){
 			_engine->crank();
-			cout<<"engine started"<<endl;
 		}	
 		void stop(){
 			_engine->halt();
-				cout<<"engine halted"<<endl;
 		}
 
 };
